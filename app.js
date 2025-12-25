@@ -2,8 +2,11 @@ require("dotenv").config();
 
 const express = require('express');
 const app = express();
-app.use(express.json()); // Parse JSON bodies
+const cors = require("cors"); //cors
 
+
+app.use(express.json()); // Parse JSON bodies
+app.use(cors("*"));
 
 // Initial Data
 let nextId = 5; // Starting ID for new todos
